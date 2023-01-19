@@ -5,6 +5,7 @@ import com.meilisearch.sdk.Index;
 import com.meilisearch.sdk.SearchRequest;
 import com.meilisearch.sdk.model.SearchResult;
 import com.meilisearch.sdk.model.Task;
+import com.meilisearch.sdk.model.TaskInfo;
 import tech.tresearchgroup.sao.model.GenericSearchFunctionality;
 
 import java.util.Arrays;
@@ -42,7 +43,7 @@ public class GenericSAO implements GenericSearchFunctionality {
 
     @Override
     public void deleteAllDocuments(Index index) throws Exception {
-        Task task = index.deleteAllDocuments();
+        TaskInfo task = index.deleteAllDocuments();
         task.wait();
     }
 
